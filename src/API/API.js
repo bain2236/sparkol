@@ -8,9 +8,9 @@ export const userLogin = async (username, password) => {
       username: username,
       password: password,
     });
+    console.log(response);
     return response.data.token;
   } catch (err) {
-    // Handle Error Here
     console.error(err);
   }
 };
@@ -18,8 +18,8 @@ export const userLogin = async (username, password) => {
 export const verifyToken = async () => {
   try {
     const response = await axios.post(`${api}verifyToken`);
+    return response.data;
   } catch (err) {
-    // Handle Error Here
     console.error(err);
   }
 };

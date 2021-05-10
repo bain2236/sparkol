@@ -22,17 +22,24 @@ const Login = (props) => {
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>
-          <input type="text" onChange={(e) => props.setUser(e.target.value)} />
+          <input
+            data-testid="input-username"
+            type="text"
+            onChange={(e) => props.setUser(e.target.value)}
+          />
         </label>
         <label>
           <p>Password</p>
           <input
+            data-testid="input-password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button data-testid="button-login" type="submit">
+            Submit
+          </button>
         </div>
       </form>
     </div>

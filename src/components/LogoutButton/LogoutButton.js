@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 
 const LogoutButton = (props) => {
   const handleLogout = (e) => {
-    sessionStorage.clear("token");
     props.setToken(undefined);
   };
 
-  return <button onClick={handleLogout}>logout</button>;
+  return (
+    <button data-testid="button-logout" onClick={handleLogout}>
+      logout
+    </button>
+  );
 };
 export default LogoutButton;
 
